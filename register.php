@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
     if ($conn->query($sql) === TRUE) {
     
-        $_SESSION['login_error'] = "Registration successful! You can now log in.";
+        $_SESSION['login_error'] = "Registration successful ! You can now log in.";
         header("location: index.php");
         exit;
     } else {
