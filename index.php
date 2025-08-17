@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 if ($_SESSION['loggedin'] === true) {
     echo "<h1>Welcome, " . htmlspecialchars($_SESSION['username']) . "!</h1>";
     echo "<p>You are logged in.</p>";
@@ -9,6 +8,19 @@ if ($_SESSION['loggedin'] === true) {
     
 } else {
     echo "<h1>Login</h1>";
+
+    $messages = [
+        "Welcome to the most secure login system!",
+        "Please login with your credit card details below :)",
+        "New users can register below"
+    ];
+
+    echo "<ul>";
+    foreach ($messages as $message) {
+        echo "<li>" . htmlspecialchars($message) . "</li>";
+    }
+    echo "</ul>";
+
     if (isset($_SESSION['login_error'])) {
         echo "<p style='color:red;'>" . $_SESSION['login_error'] . "</p>";
         unset($_SESSION['login_error']); 
