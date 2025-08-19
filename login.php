@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           
             header("location: index.php");
-        } else {
+        } else { 
            
             $_SESSION['login_error'] = "Invalid username or password.";
             header("location: index.php");
@@ -35,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['login_error'] = "Invalid username or password.";
         header("location: index.php");
     }
-
     $conn->close();
 }
 ?>
